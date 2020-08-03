@@ -10,6 +10,7 @@ function playGame(playerInput){
 		return 'nieznany ruch';
   		}
 	}
+
 clearMessages();
 
 	let randomNumber = Math.floor(Math.random() * 3 + 1);
