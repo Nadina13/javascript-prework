@@ -1,6 +1,6 @@
 {
-function playGame(playerInput){
-	function getMoveName(MoveId){
+const playGame = function (playerInput){
+	const commonMove = function (MoveId){
 		if(MoveId == 1){
 		return 'kamień';
 		} else if(MoveId == 2){
@@ -17,8 +17,8 @@ clearMessages();
 	const randomNumber = Math.floor(Math.random() * 3 + 1);
 	console.log('Wylosowana liczba to: ' + randomNumber);
 
-	const computerMove = getMoveName(randomNumber);
-	const playerMove = getMoveName(playerInput);
+	const computerMove = commonMove(randomNumber);
+	const playerMove = commonMove(playerInput);
 
 /* if(randomNumber == 1){
 	computerMove = 'kamień';
@@ -48,7 +48,7 @@ clearMessages();
 	printedMessage('Twój ruch to: ' + playerMove);
 }*/
 
-	function displayResult(ComputerMove, PlayerMove){ 	
+	const result = function(ComputerMove, PlayerMove){ 	
 		printMessage('Zagrałem ' + ComputerMove + ', a Ty ' + PlayerMove);
 		if(ComputerMove == 'kamień' && PlayerMove == 'papier'){
 			printMessage('Ty wygrywasz!');
@@ -64,8 +64,7 @@ clearMessages();
 			printMessage('Przegrałeś ;-)');
 		}
 	} 
-
-	displayResult(computerMove, playerMove);
+	result(computerMove, playerMove);
 }
 
 const rockButton = document.getElementById('play-rock');
