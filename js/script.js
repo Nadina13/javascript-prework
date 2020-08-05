@@ -81,3 +81,4 @@ let scissorsButton = document.getElementById('play-scissors');
 scissorsButton.addEventListener('click', function() {
     playGame(3);
 });
+
